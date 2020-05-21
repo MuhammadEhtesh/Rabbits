@@ -1,13 +1,9 @@
-const express = require("express");
-
-const app = express();
-
+const http = require("http");
+const backendApp = require("./backend/app");
 const port = 3000;
 
-app.use("/", (req, res) => {
-  res.send("Welcome from express app");
-});
+const server = http.createServer(backendApp);
 
-app.listen(port, (req, res) => {
-  console.log(`server is listening on port ${port}`);
+server.listen(port, () => {
+  console.log(`Server is listening on port ${port}`);
 });
