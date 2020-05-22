@@ -1,9 +1,9 @@
 const http = require("http");
+const config = require("./backend/config/config");
 const app = require("./backend/app");
-const port = 3000;
 
 const server = http.createServer(app);
 
-server.listen(port, () => {
-  console.log(`Server is listening on port ${port}`);
+server.listen(config.PORT, () => {
+  console.log(`Server is listening on port ${config.PORT}`);
 });
