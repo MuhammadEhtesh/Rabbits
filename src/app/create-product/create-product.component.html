@@ -1,15 +1,25 @@
 <div class="container">
-  <form>
+  <form [formGroup]="form" (ngSubmit)="onSaveProduct()">
     <div class="form-group">
       <label for="name">Name</label>
-      <input type="text" id="name" class="form-control" />
+      <input
+        type="text"
+        id="name"
+        class="form-control"
+        formControlName="name"
+      />
     </div>
     <div class="form-group">
       <label for="price">Price</label>
-      <input type="number" id="price" class="form-control" />
+      <input
+        type="number"
+        id="price"
+        class="form-control"
+        formControlName="price"
+      />
     </div>
     <div>
-      <input type="file" hidden #imagePicker />
+      <input type="file" (change)="onImagePicked($event)" hidden #imagePicker />
       <button
         type="button"
         class="btn btn-primary"
@@ -17,6 +27,9 @@
       >
         Main Image
       </button>
+      <div class="image-preview">
+        <img [src]="imagePreview" [alt]="form.value.name" />
+      </div>
     </div>
   </form>
 </div>
