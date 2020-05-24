@@ -5,6 +5,7 @@ export const mimeType = (
   control: AbstractControl
 ): Promise<{ [key: string]: any }> | Observable<{ [key: string]: any }> => {
   if (typeof control.value === "string") {
+    console.log(control.value);
     return of(null);
   }
 

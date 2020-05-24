@@ -1,17 +1,21 @@
 import { NgModule } from "@angular/core";
 import { ReactiveFormsModule } from "@angular/forms";
+import { MatButtonModule } from "@angular/material/button";
+import { HttpClientModule } from "@angular/common/http";
 import { BrowserModule } from "@angular/platform-browser";
 
-import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
+import { AppRoutingModule } from "./app-routing.module";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { CreateProductComponent } from "./create-product/create-product.component";
+import { CreateProductComponent } from "./Product/create-product/create-product.component";
 
 @NgModule({
   declarations: [AppComponent, CreateProductComponent],
   imports: [
     BrowserModule,
+    MatButtonModule,
     AppRoutingModule,
+    HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
   ],

@@ -16,13 +16,15 @@ export class CreateProductComponent implements OnInit {
     this.form = new FormGroup({
       name: new FormControl("", [Validators.required, Validators.minLength(3)]),
       price: new FormControl("", [Validators.required]),
-      image: new FormControl("", [Validators.required, mimeType]),
+      image: new FormControl("", [Validators.required]),
     });
   }
 
   onSaveProduct() {}
+
   onImagePicked(event: Event) {
     const file = (event.target as HTMLInputElement).files[0];
+    console.log(file);
     this.form.patchValue({ imageUrl: file });
     this.form.get("image").updateValueAndValidity();
     const reader = new FileReader();

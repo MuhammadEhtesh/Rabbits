@@ -9,6 +9,21 @@
         formControlName="name"
       />
     </div>
+    <div>
+      <button
+        type="button"
+        class="btn btn-primary"
+        (click)="imagePicker.click()"
+      >
+        Main Image
+      </button>
+      <input type="file" (change)="onImagePicked($event)" hidden #imagePicker />
+
+      <div class="image-preview" *ngIf="imagePreview && imagePreview !== ''">
+        <img [src]="imagePreview" [alt]="form.value.name" />
+      </div>
+    </div>
+    <br />
     <div class="form-group">
       <label for="price">Price</label>
       <input
@@ -18,18 +33,6 @@
         formControlName="price"
       />
     </div>
-    <div>
-      <input type="file" (change)="onImagePicked($event)" hidden #imagePicker />
-      <button
-        type="button"
-        class="btn btn-primary"
-        (click)="imagePicker.click()"
-      >
-        Main Image
-      </button>
-      <div class="image-preview">
-        <img [src]="imagePreview" [alt]="form.value.name" />
-      </div>
-    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
   </form>
 </div>
