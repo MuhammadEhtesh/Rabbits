@@ -4,6 +4,7 @@ import { MatButtonModule } from "@angular/material/button";
 import { HttpClientModule } from "@angular/common/http";
 import { BrowserModule } from "@angular/platform-browser";
 import { MatInputModule } from "@angular/material/input";
+import { MatCardModule } from "@angular/material/card";
 
 import { AppComponent } from "./app.component";
 import { AppRoutingModule } from "./app-routing.module";
@@ -15,6 +16,7 @@ import { ProductsComponent } from "./Product/products/products.component";
   declarations: [AppComponent, CreateProductComponent, ProductsComponent],
   imports: [
     BrowserModule,
+    MatCardModule,
     MatInputModule,
     MatButtonModule,
     AppRoutingModule,

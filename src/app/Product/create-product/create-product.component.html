@@ -1,39 +1,47 @@
 <div class="container">
-  <form
-    [formGroup]="form"
-    (ngSubmit)="onSaveProduct()"
-    class="create-product-form"
-  >
-    <mat-form-field class="create-product-input">
-      <input type="text" matInput placeholder="Name" formControlName="name" />
-    </mat-form-field>
-    <div>
-      <button
-        type="button"
-        mat-raised-button
-        color="primary"
-        (click)="imagePicker.click()"
-      >
-        Main Image
-      </button>
-      <input type="file" (change)="onImagePicked($event)" hidden #imagePicker />
+  <mat-card>
+    <img id="title-img" src="../../../assets/AngryRabbit.jpeg" alt="Rabbits" />
+    <form
+      [formGroup]="form"
+      (ngSubmit)="onSaveProduct()"
+      class="create-product-form"
+    >
+      <mat-form-field class="create-product-input">
+        <input type="text" matInput placeholder="Name" formControlName="name" />
+      </mat-form-field>
+      <div>
+        <button
+          type="button"
+          mat-raised-button
+          color="primary"
+          (click)="imagePicker.click()"
+        >
+          Main Image
+        </button>
+        <input
+          type="file"
+          (change)="onImagePicked($event)"
+          hidden
+          #imagePicker
+        />
 
-      <div class="image-preview" *ngIf="imagePreview && imagePreview !== ''">
-        <img [src]="imagePreview" [alt]="form.value.name" />
+        <div class="image-preview" *ngIf="imagePreview && imagePreview !== ''">
+          <img [src]="imagePreview" [alt]="form.value.name" />
+        </div>
       </div>
-    </div>
-    <br />
-    <mat-form-field class="create-product-input">
-      <input
-        type="number"
-        matInput
-        placeholder="Price"
-        formControlName="price"
-      />
-    </mat-form-field>
-    <br />
-    <button mat-raised-button color="primary" type="submit">
-      Save
-    </button>
-  </form>
+      <br />
+      <mat-form-field class="create-product-input">
+        <input
+          type="number"
+          matInput
+          placeholder="Price"
+          formControlName="price"
+        />
+      </mat-form-field>
+      <br />
+      <button mat-raised-button color="primary" type="submit">
+        Save
+      </button>
+    </form>
+  </mat-card>
 </div>

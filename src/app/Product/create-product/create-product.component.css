@@ -5,6 +5,7 @@
 
 .image-preview img {
   height: 100%;
+  margin-left: 140px;
 }
 
 .create-product-form {
@@ -13,4 +14,17 @@
 
 .create-product-input {
   width: 100%;
+}
+
+mat-card {
+  margin-top: 1rem;
+  margin-left: 300px;
+  max-width: 500px;
+}
+
+#title-img {
+  border-radius: 50%;
+  height: 200px;
+  width: 250px;
+  margin-left: 100px;
 }
