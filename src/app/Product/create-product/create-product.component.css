@@ -6,3 +6,11 @@
 .image-preview img {
   height: 100%;
 }
+
+.create-product-form {
+  max-width: 500px;
+}
+
+.create-product-input {
+  width: 100%;
+}
