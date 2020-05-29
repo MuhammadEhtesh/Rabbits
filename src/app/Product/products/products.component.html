@@ -1,7 +1,8 @@
 <div class="container">
   <div class="row">
-    <div class="col-lg-3" *ngFor="let product of products">
+    <div class="col-lg-3 col-md-3 col-sm-4" *ngFor="let product of products">
       <div class="card">
+        <!-- Static path given for presentation purpose, will change once image upload properly implemented -->
         <img
           src="../../../assets/DSC_9336.JPG"
           alt="shani"
@@ -11,9 +12,21 @@
           <h5 class="card-title">
             <span class="Card-Text">Name: </span>{{ product.name }}
           </h5>
-          <h5 class="card-title"><span>Price:</span>> ${{ product.price }}</h5>
-          <a href="#" class="card-link">Add to Cart</a>
-          <a href="#" class="card-link">Add to Favorite</a>
+          <h5 class="card-title"><span>Price:</span> ${{ product.price }}</h5>
+          <div class="row">
+            <button href="#" mat-stroked-button color="primary">
+              Add to Cart
+            </button>
+            <button href="#" mat-stroked-button color="primary">
+              Add to favorite
+            </button>
+            <button href="#" mat-stroked-button color="primary">
+              EDIT
+            </button>
+            <button href="#" mat-stroked-button color="accent">
+              DELETE
+            </button>
+          </div>
         </div>
       </div>
     </div>
