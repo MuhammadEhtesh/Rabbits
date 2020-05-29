@@ -18,7 +18,7 @@ export class CreateProductComponent implements OnInit {
     this.form = new FormGroup({
       name: new FormControl("", [Validators.required, Validators.minLength(3)]),
       price: new FormControl("", [Validators.required]),
-      image: new FormControl("", [Validators.required]),
+      image: new FormControl("", [Validators.required, mimeType]),
     });
   }
 
