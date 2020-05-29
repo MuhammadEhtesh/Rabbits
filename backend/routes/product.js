@@ -23,7 +23,6 @@ router.get("/:id", (req, res) => {
 
 router.post("/", (req, res) => {
   const product = new Product(req.body);
-  console.log(product);
   product.save((err, product) => {
     if (err) {
       return res.send(err);
