@@ -5,7 +5,7 @@ import { Product } from "../models/product";
 @Injectable({
   providedIn: "root",
 })
-export class ProductServiceService {
+export class ProductService {
   constructor(private http: HttpClient) {}
 
   onSaveProduct(product) {
@@ -13,10 +13,6 @@ export class ProductServiceService {
   }
 
   onGetAllProducts() {
-    this.http
-      .get<{ products: Product[] }>("http://localhost:3000/api/v1/product")
-      .subscribe((products) => {
-        console.log(products);
-      });
+    return this.http.get("http://localhost:3000/api/v1/product");
   }
 }

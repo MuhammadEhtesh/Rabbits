@@ -1,7 +1,7 @@
 import { mimeType } from "./mime-type.validator";
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
-import { ProductServiceService } from "../product-service.service";
+import { ProductService } from "../product-service.service";
 import { Product } from "../../models/product";
 
 @Component({
@@ -12,7 +12,7 @@ import { Product } from "../../models/product";
 export class CreateProductComponent implements OnInit {
   form: FormGroup;
   imagePreview: string;
-  constructor(private productService: ProductServiceService) {}
+  constructor(private productService: ProductService) {}
 
   ngOnInit(): void {
     this.form = new FormGroup({

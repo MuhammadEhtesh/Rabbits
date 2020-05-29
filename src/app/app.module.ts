@@ -8,9 +8,10 @@ import { AppComponent } from "./app.component";
 import { AppRoutingModule } from "./app-routing.module";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { CreateProductComponent } from "./Product/create-product/create-product.component";
+import { ProductsComponent } from './Product/products/products.component';
 
 @NgModule({
-  declarations: [AppComponent, CreateProductComponent],
+  declarations: [AppComponent, CreateProductComponent, ProductsComponent],
   imports: [
     BrowserModule,
     MatButtonModule,

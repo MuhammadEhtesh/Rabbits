@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3" *ngFor="let product of products">
+      <div class="card">
+        <img
+          src="../../../assets/DSC_9336.JPG"
+          alt="shani"
+          class="card-img-top"
+        />
+        <div class="card-body">
+          <h5 class="card-title">
+            <span class="Card-Text">Name: </span>{{ product.name }}
+          </h5>
+          <h5 class="card-title"><span>Price:</span>> ${{ product.price }}</h5>
+          <a href="#" class="card-link">Add to Cart</a>
+          <a href="#" class="card-link">Add to Favorite</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
