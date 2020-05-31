@@ -7,7 +7,7 @@ import { CreateMasterCategoryComponent } from "./Components/Category/create-mast
 const routes: Routes = [
   { path: "create", component: CreateProductComponent },
   { path: "products", component: ProductsComponent },
-  { path: "createmastercategory", component: CreateMasterCategoryComponent },
+  { path: "category", component: CreateMasterCategoryComponent },
 ];
 
 @NgModule({
