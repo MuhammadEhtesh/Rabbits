@@ -26,5 +26,9 @@ export class MasterCategoryService {
     );
   }
 
-  onDeleteMasterCategory() {}
+  onDeleteMasterCategory(id: string) {
+    return this.http.delete(
+      "http://localhost:3000/api/v1/mastercategory/" + id
+    );
+  }
 }

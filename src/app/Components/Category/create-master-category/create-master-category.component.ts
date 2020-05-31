@@ -70,4 +70,15 @@ export class CreateMasterCategoryComponent implements OnInit {
     this.MasterCategory._id = category._id;
     this.form.patchValue({ name: category.name });
   }
+
+  onDeleteMasterCategory(id: string) {
+    this._masterCategoryService.onDeleteMasterCategory(id).subscribe(() => {
+      let categories = [...this.MasterCategories];
+      const index = categories.findIndex((x) => {
+        return x._id === id;
+      });
+      categories.splice(index, 1);
+      this.MasterCategories = categories;
+    });
+  }
 }

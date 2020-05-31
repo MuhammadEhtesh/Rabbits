@@ -37,7 +37,12 @@
           >
             EDIT
           </button>
-          <button type="button" mat-stroked-button color="accent">
+          <button
+            type="button"
+            mat-stroked-button
+            color="accent"
+            (click)="onDeleteMasterCategory(category._id)"
+          >
             DELETE
           </button>
         </td>
