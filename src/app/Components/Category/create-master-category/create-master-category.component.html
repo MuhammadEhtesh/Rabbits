@@ -1,6 +1,6 @@
 <div class="container">
   <div>
-    <form [formGroup]="form" (ngSubmit)="onSaveMasterCategory()">
+    <form [formGroup]="form">
       <mat-card>
         <mat-form-field>
           <input
@@ -10,7 +10,13 @@
             formControlName="name"
           />
         </mat-form-field>
-        <button type="submit" mat-raised-button>Save</button>
+        <button
+          type="button"
+          mat-raised-button
+          (click)="onSaveMasterCategory()"
+        >
+          Save
+        </button>
       </mat-card>
     </form>
   </div>

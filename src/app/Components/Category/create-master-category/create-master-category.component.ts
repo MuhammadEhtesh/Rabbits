@@ -35,7 +35,9 @@ export class CreateMasterCategoryComponent implements OnInit {
         let masterCategories = [...this.MasterCategories];
         masterCategories.push(response as MasterCategory);
         this.MasterCategories = masterCategories;
-        this.form.controls[name].setErrors(null);
+        this.form.markAsPristine();
+        this.form.markAsUntouched();
+        this.form.reset();
       });
   }
 }
