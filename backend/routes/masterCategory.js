@@ -12,6 +12,15 @@ router.get("/", (req, res) => {
   });
 });
 
+router.get("/:id", (req, res) => {
+  MasterCategory.findById(req.params.id, (err, masterCategory) => {
+    if (err) {
+      return res.send(err);
+    }
+    res.status(200).json(masterCategory);
+  });
+});
+
 router.post("/", (req, res) => {
   newMasterCategory = new MasterCategory(req.body);
   newMasterCategory.save((err, masterCategory) => {
@@ -19,6 +28,29 @@ router.post("/", (req, res) => {
       return res.send(err);
     }
     res.status(201).json(masterCategory);
+  });
+});
+
+router.put("/", (req, res) => {
+  const masterCategory = req.body;
+  Product.updateOne(
+    { _id: masterCategory._id },
+    { name: masterCategory.name },
+    (err, masterCategory) => {
+      if (err) {
+        return res.send(err);
+      }
+      res.json(masterCategory);
+    }
+  );
+});
+
+router.delete("/:id", (req, res) => {
+  MasterCategory.findByIdAndDelete(req.body.id, (err, category) => {
+    if (err) {
+      return res.send(err);
+    }
+    res.status(204).json(category);
   });
 });
 
