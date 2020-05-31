@@ -18,4 +18,13 @@ export class MasterCategoryService {
   onGetAllMasterCategories() {
     return this.http.get("http://localhost:3000/api/v1/mastercategory");
   }
+
+  onUpdateMasterCategory(masterCategory: MasterCategory) {
+    return this.http.put(
+      "http://localhost:3000/api/v1/mastercategory",
+      masterCategory
+    );
+  }
+
+  onDeleteMasterCategory() {}
 }

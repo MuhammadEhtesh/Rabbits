@@ -29,7 +29,14 @@
       <tr *ngFor="let category of MasterCategories">
         <td>{{ category.name }}</td>
         <td>
-          <button type="button" mat-stroked-button color="primary">EDIT</button>
+          <button
+            type="button"
+            mat-stroked-button
+            color="primary"
+            (click)="onEditMasterCategory(category._id)"
+          >
+            EDIT
+          </button>
           <button type="button" mat-stroked-button color="accent">
             DELETE
           </button>
