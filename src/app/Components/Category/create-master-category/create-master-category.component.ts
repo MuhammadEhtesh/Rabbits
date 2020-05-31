@@ -18,14 +18,24 @@ export class CreateMasterCategoryComponent implements OnInit {
     this.form = new FormGroup({
       name: new FormControl("", [Validators.required, Validators.minLength(3)]),
     });
+
+    this._masterCategoryService
+      .onGetAllMasterCategories()
+      .subscribe((resposne) => {
+        this.MasterCategories = resposne as MasterCategory[];
+      });
   }
 
   onSaveMasterCategory() {
-    const masterCategory = new MasterCategory(this.form.name);
+    const masterCategory = new MasterCategory(this.form.controls.name.value);
+
     this._masterCategoryService
       .onSaveMasterCategory(masterCategory)
       .subscribe((response) => {
-        this.form.reset();
+        let masterCategories = [...this.MasterCategories];
+        masterCategories.push(response as MasterCategory);
+        this.MasterCategories = masterCategories;
+        this.form.controls[name].setErrors(null);
       });
   }
 }

@@ -1,6 +1,6 @@
 <div class="container">
-  <div class="col-lg-3">
-    <form [formGroup]="form">
+  <div>
+    <form [formGroup]="form" (ngSubmit)="onSaveMasterCategory()">
       <mat-card>
         <mat-form-field>
           <input
@@ -15,8 +15,20 @@
     </form>
   </div>
   <div>
-    <mat-card *ngFor="let masterCategory of MasterCategories">
-      {{ masterCategory.name }}
-    </mat-card>
+    <table>
+      <tr>
+        <th>Category Name</th>
+        <th>Action</th>
+      </tr>
+      <tr *ngFor="let category of MasterCategories">
+        <td>{{ category.name }}</td>
+        <td>
+          <button type="button" mat-stroked-button color="primary">EDIT</button>
+          <button type="button" mat-stroked-button color="accent">
+            DELETE
+          </button>
+        </td>
+      </tr>
+    </table>
   </div>
 </div>
