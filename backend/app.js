@@ -1,9 +1,10 @@
+const cors = require("cors");
 const express = require("express");
 const mongoose = require("mongoose");
 const config = require("./config/config");
 const ApiRoutes = require("./config/ApiRoutes");
-const cors = require("cors");
 const productRouter = require("./routes/product");
+const masterCategoryRouter = require("./routes/masterCategory");
 
 const app = express();
 app.use(cors());
@@ -27,5 +28,6 @@ app.get("/", (req, res) => {
 
 // Routes
 app.use(ApiRoutes.Product, productRouter);
+app.use(ApiRoutes.MasterCategory, masterCategoryRouter);
 
 module.exports = app;
