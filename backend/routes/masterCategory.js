@@ -33,7 +33,7 @@ router.post("/", (req, res) => {
 
 router.put("/", (req, res) => {
   const masterCategory = req.body;
-  Product.updateOne(
+  MasterCategory.updateOne(
     { _id: masterCategory._id },
     { name: masterCategory.name },
     (err, masterCategory) => {
@@ -46,11 +46,12 @@ router.put("/", (req, res) => {
 });
 
 router.delete("/:id", (req, res) => {
-  MasterCategory.findByIdAndDelete(req.body.id, (err, category) => {
+  MasterCategory.deleteOne({ _id: req.params.id }, (err) => {
     if (err) {
-      return res.send(err);
+      return res.status(404).send(err);
     }
-    res.status(204).json(category);
+
+    res.sendStatus(204);
   });
 });
 
