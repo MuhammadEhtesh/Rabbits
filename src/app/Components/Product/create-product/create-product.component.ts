@@ -1,8 +1,8 @@
 import { mimeType } from "./mime-type.validator";
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
-import { ProductService } from "../product-service.service";
-import { Product } from "../../models/product";
+import { ProductService } from "../../../Services/product-service.service";
+import { Product } from "../../../models/product";
 
 @Component({
   selector: "app-create-product",

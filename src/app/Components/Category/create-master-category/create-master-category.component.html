@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="col-lg-3">
+    <form [formGroup]="form">
+      <mat-card>
+        <mat-form-field>
+          <input
+            type="text"
+            matInput
+            placeholder="Master Category Name"
+            formControlName="name"
+          />
+        </mat-form-field>
+        <button type="submit" mat-raised-button>Save</button>
+      </mat-card>
+    </form>
+  </div>
+  <div>
+    <mat-card *ngFor="let masterCategory of MasterCategories">
+      {{ masterCategory.name }}
+    </mat-card>
+  </div>
+</div>
