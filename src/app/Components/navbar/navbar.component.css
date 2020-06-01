@@ -1,0 +1,25 @@
+.companyname {
+  font-size: 150%;
+}
+.companyname:hover {
+  color: white;
+  text-decoration: none;
+}
+.searchInput > input {
+  margin-left: 200px;
+  background-color: white;
+  height: 50px;
+  width: 500px;
+  border-radius: 5px 0 0 5px;
+  padding: 4px;
+}
+
+.searchbutton {
+  background-color: white;
+  height: 50px;
+  border-radius: 0 5px 5px 0;
+}
+
+mat-icon {
+  color: black;
+}
