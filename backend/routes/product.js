@@ -1,6 +1,17 @@
 const express = require("express");
+const multer = require("multer");
 const Product = require("../models/product");
 
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "./backend/uploads/");
+  },
+  filename: function (req, file, cb) {
+    cb(null, new Date().toISOString() + file.originalname);
+  },
+});
+
+const upload = multer({ storage: storage });
 const router = express.Router();
 
 router.get("/", (req, res) => {
@@ -21,8 +32,9 @@ router.get("/:id", (req, res) => {
   });
 });
 
-router.post("/", (req, res) => {
+router.post("/", upload.single("image"), (req, res) => {
   const product = new Product(req.body);
+  product.image = req.file.originalname;
   product.save((err, product) => {
     if (err) {
       return res.send(err);
@@ -35,7 +47,7 @@ router.put("/", (req, res) => {
   const product = req.body;
   Product.updateOne(
     { _id: product._id },
-    { name: product.name, price: product.price, imageUrl: product.imageUrl },
+    { name: product.name, price: product.price, image: product.image },
     (err, product) => {
       if (err) {
         return res.send(err);
